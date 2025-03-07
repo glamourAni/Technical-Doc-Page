@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Technical Documentation Page</title>
+	</head>
+	<body>
+		<main id="main-doc">
+			<!-- Navbar -->
+			<nav id="navbar">
+				<header>How The Internet Works</header>
+				<div id="column">
+					<ul>
+						<li>
+							<a class="nav-link" href="#Introduction"
+								>Introduction</a
+							>
+						</li>
+						<li>
+							<a
+								class="nav-link"
+								href="#The_Role_Of_HTTP_In_The_Internet"
+								>The Role Of HTTP In The Internet</a
+							>
+						</li>
+						<li>
+							<a
+								class="nav-link"
+								href="#Difference_Between_HTTP_and_HTTPS"
+								>Difference Between HTTP and HTTPS</a
+							>
+						</li>
+						<li>
+							<a
+								class="nav-link"
+								href="#HTTP_request_and_response_cycle"
+								>HTTP request and response cycle</a
+							>
+						</li>
+						<li>
+							<a class="nav-link" href="#Common_HTTP_Methods"
+								>Common HTTP Methods</a
+							>
+						</li>
+						<li>
+							<a class="nav-link" href="#IP_Address"
+								>IP Address</a
+							>
+						</li>
+						<li>
+							<a class="nav-link" href="#How_DNS_Works"
+								>How DNS Works</a
+							>
+						</li>
+						<li>
+							<a class="nav-link" href="#Types_Of_DNS_Records"
+								>Types Of DNS Records</a
+							>
+						</li>
+						<li>
+							<a class="nav-link" href="#Checking_DNS_Records"
+								>Checking DNS Records</a
+							>
+						</li>
+					</ul>
+					<div class="line"></div>
+				</div>
+			</nav>
+			<!-- Main Content -->
+			<div>
+				<section id="Introduction" class="main-section">
+					<header>Introduction</header>
+					<p>
+						The internet is a global network of computers that are
+						interconnected to send and receive data simultaneously.
+						Computers communicate with each other over the internet
+						using various networking structures, by being linked
+						either physically using cables or wires, or wirelessly
+						through Bluetooth, Wi-Fi systems. Commonly described as
+						a network of networks, the internet can establish
+						connections between not just two computers but billions
+						of computers all over the world.
+					</p>
+					<p>
+						When data gets sent over the Internet, it is first
+						broken up into smaller packets, which are then
+						translated into bits. A packet is a smaller fragment of
+						a larger message. The packets get routed to their
+						destination by various networking devices such as
+						routers and switches. When the packets arrive at their
+						destination, the receiving device reassembles the
+						packets in order and can then use or display the data.
+						This process is called packet switching.
+					</p>
+				</section>
+				<section
+					id="The_Role_Of_HTTP_In_The_Internet"
+					class="main-section"
+				>
+					<header>The Role Of HTTP In The Internet</header>
+					<p>
+						Protocols in networking refer to the rules that manage,
+						control and make it possible for computers to
+						communicate over the internet.The Hypertext Transfer
+						Protocol (HTTP) is the foundation of the World Wide Web,
+						and is used to load webpages using hypertext links. HTTP
+						is an application layer protocol designed to transfer
+						information between networked devices and runs on top of
+						other layers of the network protocol stack. A typical
+						flow over HTTP involves a client machine making a
+						request to a server, which then sends a response
+						message.
+					</p>
+				</section>
+
+				<section
+					id="Difference_Between_HTTP_and_HTTPS"
+					class="main-section"
+				>
+					<header>Difference Between HTTP and HTTPS</header>
+					<p>
+						Authentication means verifying that a person or machine
+						is who they claim to be. In HTTP, there is no
+						verification of identity – it's based on a principle of
+						trust. The architects of HTTP didn't necessarily make a
+						decision to implicitly trust all web servers; they
+						simply had priorities other than security at the time.
+						But on the modern Internet, authentication is essential.
+					</p>
+					<p>
+						The S in HTTPS stands for "secure." HTTPS uses TLS (or
+						SSL) to encrypt HTTP requests and responses, so in the
+						example above, instead of the text, an attacker would
+						see a bunch of seemingly random characters. Instead of:
+					</p>
+					<code
+						>GET /hello.txt HTTP/1.1 User-Agent: curl/7.63.0
+						libcurl/7.63.0 OpenSSL/1.1.l zlib/1.2.11 Host:
+						www.example.com Accept-Language: en</code
+					>
+					<p>The attacker sees something like:</p>
+					<code>
+						t8Fw6T8UV81pQfyhDkhebbz7+oiwldr1j2gHBB3L3RFTRsQCpaSnSBZ78Vme+DpDVJPvZdZUZHpzbbcqmSW1+3xXGsERHg9YDmpYk0VVDiRvw1H5miNieJeJ/FNUjgH0BmVRWII6+T4MnDwmCMZUI/orxP3HGwYCSIvyzS3MpmmSe4iaWKCOHQ==</code
+					>
+				</section>
+				<section
+					id="HTTP_request_and_response_cycle"
+					class="main-section"
+				>
+					<header>HTTP request and response cycle</header>
+					<p>
+						HTTP requests are generated by a user's browser as the
+						user interacts with web properties. For example, if a
+						user clicks on a hyperlink, the browser will send a
+						series of "HTTP GET" requests for the content that
+						appears on that page. If someone Googles "What is HTTP?"
+						and this article shows up in the search results, when
+						they click on the link, their browser will create and
+						send a series of HTTP requests in order to get the
+						information necessary to render the page.
+					</p>
+					<p>
+						These HTTP requests all go to either an origin server or
+						a proxy caching server, and that server will generate an
+						HTTP response. HTTP responses are answers to HTTP
+						requests.
+					</p>
+					<p>A GET request might look like this:</p>
+					<code
+						>GET /hello.txt HTTP/1.1 User-Agent: curl/7.63.0
+						libcurl/7.63.0 OpenSSL/1.1.l zlib/1.2.11 Host:
+						www.example.com Accept-Language: en</code
+					>
+					<p>
+						This section of text, generated by the user's browser,
+						gets sent across the Internet. The problem is, it's sent
+						just like this, in plaintext that anyone monitoring the
+						connection can read. (Those who are unfamiliar with the
+						HTTP protocol may find this text hard to understand, but
+						anyone with a baseline knowledge of the protocol's
+						commands and syntax can read it easily.)
+					</p>
+					<p>
+						This is especially an issue when users submit sensitive
+						data via a website or a web application. This could be a
+						password, a credit card number, or any other data
+						entered into a form, and in HTTP all this data is sent
+						in plaintext for anyone to read. (When a user submits a
+						form, the browser translates this into an HTTP POST
+						request instead of an HTTP GET request.)
+					</p>
+					<p>
+						When an origin server receives an HTTP request, it sends
+						an HTTP response, which is similar:
+					</p>
+					<code
+						>HTTP/1.1 200 OK Date: Wed, 30 Jan 2019 12:14:39 GMT
+						Server: Apache Last-Modified: Mon, 28 Jan 2019 11:17:01
+						GMT Accept-Ranges: bytes Content-Length: 12 Vary:
+						Accept-Encoding Content-Type: text/plain
+						<span class="content">Hello World!</span>
+					</code>
+					<p>
+						If a website uses HTTP instead of HTTPS, all requests
+						and responses can be read by anyone who is monitoring
+						the session. Essentially, a malicious actor can just
+						read the text in the request or the response and know
+						exactly what information someone is asking for, sending,
+						or receiving.
+					</p>
+				</section>
+				<section id="Common_HTTP_Methods" class="main-section">
+					<header>Common HTTP Methods</header>
+					<p>
+						An HTTP method, sometimes referred to as an HTTP verb,
+						indicates the action that the HTTP request expects from
+						the queried server. For example, two of the most common
+						HTTP methods are ‘GET’ and ‘POST’; a ‘GET’ request
+						expects information back in return (usually in the form
+						of a website), while a ‘POST’ request typically
+						indicates that the client is submitting information to
+						the web server (such as form information, e.g. a
+						submitted username and password).
+					</p>
+					<ul>
+						<li>
+							GET
+							<br />The GET method requests a representation of
+							the specified resource. Requests using GET should
+							only retrieve data and should not contain a request
+							content.
+						</li>
+						<li>
+							HEAD The HEAD method asks for a response identical
+							to a GET request, but without a response body.
+						</li>
+						<li>
+							POST The POST method submits an entity to the
+							specified resource, often causing a change in state
+							or side effects on the server.
+						</li>
+						<li>
+							PUT The PUT method replaces all current
+							representations of the target resource with the
+							request content.
+						</li>
+						<li>
+							DELETE The DELETE method deletes the specified
+							resource.
+						</li>
+						<li>
+							CONNECT The CONNECT method establishes a tunnel to
+							the server identified by the target resource.
+						</li>
+						<li>
+							OPTIONS The OPTIONS method describes the
+							communication options for the target resource.
+						</li>
+						<li>
+							TRACE The TRACE method performs a message loop-back
+							test along the path to the target resource.
+						</li>
+						<li>
+							PATCH The PATCH method applies partial modifications
+							to a resource.
+						</li>
+					</ul>
+				</section>
+				<section id="IP_Address" class="main-section">
+					<header>IP Address</header>
+					<p>
+						An IP(Internet Protocol) address is a number used to
+						address each device on an IP network uniquely. With
+						billions of people accessing the Internet every day,
+						unique identifiers are necessary to keep track of who is
+						doing what. The Internet Protocol solves this by
+						assigning IP numbers to every device accessing the
+						Internet.
+					</p>
+					<p>
+						The system that orchestrates all this is called DNS. It
+						works like a phone book for IP addresses so that users
+						can access web services using human-friendly domain
+						names. When a user types a domain name like
+						‘facebook.com’ into their browser window, this begins a
+						DNS query which ultimately leads to a DNS server
+						translating the domain name into an IP address.
+					</p>
+				</section>
+				<section id="How_DNS_Works" class="main-section">
+					<header>How DNS Works</header>
+					<p>
+						Humans access information online through domain names,
+						like nytimes.com or espn.com. Web browsers interact
+						through Internet Protocol (IP) addresses. DNS translates
+						domain names to IP addresses so browsers can load
+						Internet resources.
+					</p>
+					<p>
+						The process of DNS resolution involves converting a
+						hostname (such as www.example.com) into a
+						computer-friendly IP address (such as 192.168.1.1). An
+						IP address is given to each device on the Internet, and
+						that address is necessary to find the appropriate
+						Internet device - like a street address is used to find
+						a particular home. When a user wants to load a webpage,
+						a translation must occur between what a user types into
+						their web browser (example.com) and the machine-friendly
+						address necessary to locate the example.com webpage.
+					</p>
+				</section>
+				<section id="Types_Of_DNS_Records" class="main-section">
+					<header>Types Of DNS Records</header>
+					<p>
+						DNS records (aka zone files) are instructions that live
+						in authoritative DNS servers and provide information
+						about a domain including what IP address is associated
+						with that domain and how to handle requests for that
+						domain. These records consist of a series of text files
+						written in what is known as DNS syntax. DNS syntax is
+						just a string of characters used as commands that tell
+						the DNS server what to do. All DNS records also have a
+						‘TTL’, which stands for time-to-live, and indicates how
+						often a DNS server will refresh that record.
+					</p>
+					<p>Common types of DNS Records are</p>
+					<ul>
+						<li>
+							A record - The record that holds the IP address of a
+							domain. Learn more about the A record.
+						</li>
+						<li>
+							AAAA record - The record that contains the IPv6
+							address for a domain (as opposed to A records, which
+							list the IPv4 address). Learn more about the AAAA
+							record.
+						</li>
+						<li>
+							CNAME record - Forwards one domain or subdomain to
+							another domain, does NOT provide an IP address.
+							Learn more about the CNAME record.
+						</li>
+						<li>
+							MX record - Directs mail to an email server. Learn
+							more about the MX record.
+						</li>
+						<li>
+							TXT record - Lets an admin store text notes in the
+							record. These records are often used for email
+							security. Learn more about the TXT record.
+						</li>
+						<li>
+							NS record - Stores the name server for a DNS entry.
+							Learn more about the NS record.
+						</li>
+						<li>
+							SOA record - Stores admin information about a
+							domain. Learn more about the SOA record.
+						</li>
+						<li>
+							SRV record - Specifies a port for specific services.
+							Learn more about the SRV record.
+						</li>
+						<li>
+							PTR record - Provides a domain name in
+							reverse-lookups. Learn more about the PTR record.
+						</li>
+					</ul>
+				</section>
+				<section id="Checking_DNS_Records" class="main-section">
+					<header>Checking DNS Records</header>
+					<p>We can check DNS records using the command line:</p>
+					<code
+						>nslookup example.com dig example.com whois example.com
+					</code>
+				</section>
+			</div>
+		</main>
+	</body>
+</html>
