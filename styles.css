@@ -1,17 +1,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
-	--text: #3f352c;
-	--background: #b4a79e;
+	--nav-background: #b4a797;
+	--content-background: #ffffef;
+	--hover: #092b4b;
+	--text: #010203;
+}
+html {
+	scroll-behavior: smooth;
 }
 body {
 	box-sizing: border-box;
 	font-family: "Roboto", sans-serif;
-	background-color: var(--background);
+	background-color: var(--content-background);
 	margin: 0;
 	padding: 0;
+	overflow-wrap: anywhere;
+
 	/* overflow-x: hidden; */
 	/* width: 100vw; */
 }
 #main-doc {
-	/* display: flex; */
+	display: flex;
+}
+#navbar {
+	padding-left: 1.2em;
+	padding-top: 1.9em;
+	width: 30%;
+	max-width: 280px;
+	height: 100%;
+	position: fixed;
+	background-color: var(--nav-background);
+}
+
+#main-doc > div {
+	margin-left: 20em;
+	margin-top: 1em;
+}
+#navbar header {
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+ul {
+	padding: 0;
+	margin-top: 1.7em;
+}
+ul li {
+	list-style: none;
+}
+li {
+	font-size: 1.1rem;
+	margin-bottom: 2em;
+}
+a {
+	text-decoration: none;
+	color: var(--text);
+	line-height: 1.5em;
+}
+a:hover {
+	color: var(--hover) !important;
+
+	/* padding: 0.5em; */
+}
+
+.main-section {
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	padding-right: 1em;
+}
+.main-section:last-of-type a {
+	color: #605b5d;
+	font-style: italic;
+}
+
+.main-section > header {
+	font-size: 1.7rem;
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+.main-section p {
+	font-size: 1.1rem;
+}
+code {
+	display: block;
+	background-color: #6b635c;
+	padding: 1.5em 1em;
+	line-height: 1.5em;
+	margin-top: 2em;
+	margin-bottom: 2.5em;
+}
+
+@media (min-width: 768px) and (max-width: 880px) {
+	#main-doc > div {
+		margin-left: 17.5em;
+	}
+}
+@media (max-width: 767px) {
+	#navbar {
+		display: none;
+	}
+	#main-doc {
+		display: block;
+	}
+	#main-doc > div {
+		margin: 0;
+		padding: 2%;
+	}
+	.main-section p {
+		font-size: 1.3rem;
+	}
 }
